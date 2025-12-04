@@ -401,7 +401,7 @@ class PaginaMenuPrincipal(customtkinter.CTkFrame):
         customtkinter.CTkButton(button_frame, text="4. Visualizar Estadísticas (Gráficos Fijos)", width=250, height=50, command=lambda: controller.mostrar_pagina("PaginaEstadisticas")).grid(row=1, column=1, padx=20, pady=10)
         
         # Botón para cerrar sesión
-        customtkinter.CTkButton(self, text="Cerrar Sesión", width=150, fg_color="red", hover_color="darkred", command=lambda: controller.mostrar_pagina("PaginaLogin")).grid(row=3, column=0, pady=(10, 20), sticky="n")
+        customtkinter.CTkButton(self, text="Cerrar Sesión", width=150, fg_color="green", hover_color="darkred", command=lambda: controller.mostrar_pagina("PaginaLogin")).grid(row=3, column=0, pady=(10, 20), sticky="n")
 
     def configurar_bienvenida(self, usuario):
         self.label_bienvenida.configure(text=f"Bienvenido(a) {usuario}")
@@ -446,7 +446,7 @@ class PaginaAgregar(customtkinter.CTkFrame):
         btn_frame = customtkinter.CTkFrame(self, fg_color="transparent")
         btn_frame.pack(pady=(0, 20))
         customtkinter.CTkButton(btn_frame, text="Guardar Álbum", width=200, command=self.guardar_album).pack(side="left", padx=10)
-        customtkinter.CTkButton(btn_frame, text="Volver al Menú", width=200, command=lambda: controller.mostrar_pagina("PaginaMenuPrincipal")).pack(side="left", padx=10)
+        customtkinter.CTkButton(btn_frame, text="Volver al Menú",width=200, command=lambda: controller.mostrar_pagina("PaginaMenuPrincipal")).pack(side="left", padx=10)
 
     def guardar_album(self):
         """Valida y guarda el nuevo álbum en la BD y recarga el DataFrame."""
@@ -715,7 +715,7 @@ class PaginaFiltros(customtkinter.CTkFrame):
         self.grafico_frame.grid_columnconfigure(0, weight=1)
         self.canvas_widget = None
 
-        customtkinter.CTkButton(self, text="Volver al Menú", width=200, command=lambda: controller.mostrar_pagina("PaginaMenuPrincipal")).pack(pady=10)
+        customtkinter.CTkButton(self, text="Volver al Menú",width=200, command=lambda: controller.mostrar_pagina("PaginaMenuPrincipal")).pack(pady=10)
 
     def cambiar_color_y_actualizar(self, key):
         """Actualiza el color global y fuerza la actualización del gráfico actual."""
